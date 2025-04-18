@@ -20,6 +20,7 @@ public class Token {
 
     @OneToOne
     @JoinColumn(name = "app_user_id", nullable = false)
+    // No manejo aqui el deleteCascade
     private AppUser appUser;
 
     public Token() {
