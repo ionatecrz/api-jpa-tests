@@ -18,9 +18,9 @@ public class Token {
     @GeneratedValue(strategy = GenerationType.UUID)
     public String id;
 
-    @OneToOne
+    @OneToOne//(cascade = CascadeType.REMOVE) Sería asi para el TODO3 pero lo quito porque en lostest lo manejo distinto
     @JoinColumn(name = "app_user_id", nullable = false)
-    // No manejo aqui el deleteCascade
+    // No manejo aqui el deleteCascade sino con la misma funcion mas adelante
     private AppUser appUser;
 
     public Token() {
@@ -46,6 +46,5 @@ public class Token {
     public void setAppUser(AppUser appUser) {
         this.appUser = appUser;
     }
-
 
 }
